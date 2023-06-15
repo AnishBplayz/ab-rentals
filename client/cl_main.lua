@@ -98,8 +98,9 @@ RegisterNetEvent('ab-rentals:client:spawncar', function(data)
     local menu = data.menu
     local label = Lang:t("error.not_enough_space", {vehicle = menu:sub(1,1):upper()..menu:sub(2)})
     local pedCoords = GetEntityCoords(cache.ped, false)
-
-
+    local nearestDistance = nil
+    local nearestSpawnpoint = nil
+        
     for _, spawnpoint in ipairs(Config.Locations[menu].spawnpoint) do
         local distance = #(pedCoords - vector3(spawnpoint.x, spawnpoint.y, spawnpoint.z))
         if not nearestDistance or distance < nearestDistance then
