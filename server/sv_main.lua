@@ -52,7 +52,7 @@ end)
 RegisterServerEvent('ab-rentals:server:removepapers', function(plate)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    local Rentalpapers = exports['qb-inventory']:GetItemByName(src, 'rentalpapers')
+    local Rentalpapers = Player.Functions.GetItemByName('rentalpapers')
     if Rentalpapers then
         if  Rentalpapers.info.plate == plate then
             local info = Rentalpapers.info
