@@ -4,7 +4,7 @@ CreateThread(function()
     local model = joaat(Config.Locations.vehicle.pedhash)
     lib.requestModel(model, 100)
     while not HasModelLoaded(model) do
-        Wait(10)
+        Wait(1000)
     end
 
     local coords = Config.Locations.vehicle.ped -- Assuming you want to use the first ped location
@@ -50,7 +50,7 @@ CreateThread(function()
     local model = joaat(Config.Locations.boat.pedhash)
     lib.requestModel(model, 100)
     while not HasModelLoaded(model) do
-        Wait(10)
+        Wait(1000)
     end
 
     local coords = Config.Locations.boat.ped -- Assuming you want to use the first ped location
